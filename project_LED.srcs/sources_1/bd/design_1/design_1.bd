@@ -1,0 +1,532 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x1A883943ABF54BEB",
+      "device": "xc7a100tcsg324-1",
+      "gen_directory": "../../../../project_LED.gen/sources_1/bd/design_1",
+      "name": "design_1",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2021.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "set_anode_0": "",
+      "frequency_divider_0": "",
+      "compute_current_0": "",
+      "mux_8_1_0": "",
+      "Hex_to_7_segment_0": "",
+      "separator_0": "",
+      "fibo_FSM_0": ""
+    },
+    "ports": {
+      "CLK": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "RESET",
+            "value_src": "default"
+          },
+          "CLK_DOMAIN": {
+            "value": "design_1_CLK",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      },
+      "RESET": {
+        "direction": "I"
+      },
+      "AN_0": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "c_control": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "start_0": {
+        "direction": "I"
+      },
+      "n_0": {
+        "direction": "I",
+        "left": "5",
+        "right": "0"
+      },
+      "ready_0": {
+        "direction": "O"
+      },
+      "char9_0": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "char10_0": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "char11_0": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      }
+    },
+    "components": {
+      "set_anode_0": {
+        "vlnv": "xilinx.com:module_ref:set_anode:1.0",
+        "xci_name": "design_1_set_anode_0_0",
+        "xci_path": "ip\\design_1_set_anode_0_0\\design_1_set_anode_0_0.xci",
+        "inst_hier_path": "set_anode_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "set_anode",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "b": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "AN": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "frequency_divider_0": {
+        "vlnv": "xilinx.com:module_ref:frequency_divider:1.0",
+        "xci_name": "design_1_frequency_divider_0_0",
+        "xci_path": "ip\\design_1_frequency_divider_0_0\\design_1_frequency_divider_0_0.xci",
+        "inst_hier_path": "frequency_divider_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "frequency_divider",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "design_1_CLK",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "set": {
+            "direction": "I"
+          },
+          "CLK_out": {
+            "direction": "O"
+          }
+        }
+      },
+      "compute_current_0": {
+        "vlnv": "xilinx.com:module_ref:compute_current:1.0",
+        "xci_name": "design_1_compute_current_0_0",
+        "xci_path": "ip\\design_1_compute_current_0_0\\design_1_compute_current_0_0.xci",
+        "inst_hier_path": "compute_current_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "compute_current",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "enable": {
+            "direction": "I"
+          },
+          "CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_CLK",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "current_control": {
+            "direction": "O",
+            "left": "2",
+            "right": "0"
+          }
+        }
+      },
+      "mux_8_1_0": {
+        "vlnv": "xilinx.com:module_ref:mux_8_1:1.0",
+        "xci_name": "design_1_mux_8_1_0_0",
+        "xci_path": "ip\\design_1_mux_8_1_0_0\\design_1_mux_8_1_0_0.xci",
+        "inst_hier_path": "mux_8_1_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "mux_8_1",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "char1": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "char2": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "char3": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "char4": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "char5": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "char6": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "char7": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "char8": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "control": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "char_out": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "Hex_to_7_segment_0": {
+        "vlnv": "xilinx.com:module_ref:Hex_to_7_segment:1.0",
+        "xci_name": "design_1_Hex_to_7_segment_0_0",
+        "xci_path": "ip\\design_1_Hex_to_7_segment_0_0\\design_1_Hex_to_7_segment_0_0.xci",
+        "inst_hier_path": "Hex_to_7_segment_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Hex_to_7_segment",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "hex_number": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "c_control": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "separator_0": {
+        "vlnv": "xilinx.com:module_ref:separator:1.0",
+        "xci_name": "design_1_separator_0_0",
+        "xci_path": "ip\\design_1_separator_0_0\\design_1_separator_0_0.xci",
+        "inst_hier_path": "separator_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "separator",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "char1": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "char2": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "char3": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "char4": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "char5": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "char6": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "char7": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "char8": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "char9": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "char10": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "char11": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "data": {
+            "direction": "I",
+            "left": "43",
+            "right": "0"
+          }
+        }
+      },
+      "fibo_FSM_0": {
+        "vlnv": "xilinx.com:module_ref:fibo_FSM:1.0",
+        "xci_name": "design_1_fibo_FSM_0_0",
+        "xci_path": "ip\\design_1_fibo_FSM_0_0\\design_1_fibo_FSM_0_0.xci",
+        "inst_hier_path": "fibo_FSM_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "fibo_FSM",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "RESET",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_CLK",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "RESET": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "start": {
+            "direction": "I"
+          },
+          "n": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "ready": {
+            "direction": "O"
+          },
+          "r": {
+            "direction": "O",
+            "left": "43",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "CLK_1": {
+        "ports": [
+          "CLK",
+          "frequency_divider_0/CLK",
+          "compute_current_0/CLK",
+          "fibo_FSM_0/CLK"
+        ]
+      },
+      "Hex_to_7_segment_0_c_control": {
+        "ports": [
+          "Hex_to_7_segment_0/c_control",
+          "c_control"
+        ]
+      },
+      "compute_current_0_current_control": {
+        "ports": [
+          "compute_current_0/current_control",
+          "set_anode_0/b",
+          "mux_8_1_0/control"
+        ]
+      },
+      "fibo_FSM_0_r": {
+        "ports": [
+          "fibo_FSM_0/r",
+          "separator_0/data"
+        ]
+      },
+      "fibo_FSM_0_ready": {
+        "ports": [
+          "fibo_FSM_0/ready",
+          "ready_0"
+        ]
+      },
+      "frequency_divider_0_CLK_out": {
+        "ports": [
+          "frequency_divider_0/CLK_out",
+          "compute_current_0/enable"
+        ]
+      },
+      "mux_8_1_0_char_out": {
+        "ports": [
+          "mux_8_1_0/char_out",
+          "Hex_to_7_segment_0/hex_number"
+        ]
+      },
+      "n_0_1": {
+        "ports": [
+          "n_0",
+          "fibo_FSM_0/n"
+        ]
+      },
+      "separator_0_char1": {
+        "ports": [
+          "separator_0/char1",
+          "mux_8_1_0/char1"
+        ]
+      },
+      "separator_0_char2": {
+        "ports": [
+          "separator_0/char2",
+          "mux_8_1_0/char2"
+        ]
+      },
+      "separator_0_char3": {
+        "ports": [
+          "separator_0/char3",
+          "mux_8_1_0/char3"
+        ]
+      },
+      "separator_0_char4": {
+        "ports": [
+          "separator_0/char4",
+          "mux_8_1_0/char4"
+        ]
+      },
+      "separator_0_char5": {
+        "ports": [
+          "separator_0/char5",
+          "mux_8_1_0/char5"
+        ]
+      },
+      "separator_0_char6": {
+        "ports": [
+          "separator_0/char6",
+          "mux_8_1_0/char6"
+        ]
+      },
+      "separator_0_char7": {
+        "ports": [
+          "separator_0/char7",
+          "mux_8_1_0/char7"
+        ]
+      },
+      "separator_0_char8": {
+        "ports": [
+          "separator_0/char8",
+          "mux_8_1_0/char8"
+        ]
+      },
+      "separator_0_char9": {
+        "ports": [
+          "separator_0/char9",
+          "char9_0"
+        ]
+      },
+      "separator_0_char10": {
+        "ports": [
+          "separator_0/char10",
+          "char10_0"
+        ]
+      },
+      "separator_0_char11": {
+        "ports": [
+          "separator_0/char11",
+          "char11_0"
+        ]
+      },
+      "set_0_1": {
+        "ports": [
+          "RESET",
+          "frequency_divider_0/set",
+          "compute_current_0/reset",
+          "fibo_FSM_0/RESET"
+        ]
+      },
+      "set_anode_0_AN": {
+        "ports": [
+          "set_anode_0/AN",
+          "AN_0"
+        ]
+      },
+      "start_0_1": {
+        "ports": [
+          "start_0",
+          "fibo_FSM_0/start"
+        ]
+      }
+    }
+  }
+}
