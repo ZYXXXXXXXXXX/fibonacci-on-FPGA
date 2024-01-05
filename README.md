@@ -5,5 +5,5 @@ This project uses FPGA csg324 to calculate and show fibonacci sequence. The code
 
 ***
 ## description
-The inputs are five digits fibonacci input representing by five buttons.
-The results of the fibonacci sequence are represented by 10 digits.
+The inputs are five digits fibonacci input representing by five buttons.  
+The results of the fibonacci sequence are represented by 10 digits (four green LEDs represent 1 digit).
